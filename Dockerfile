@@ -1,7 +1,7 @@
 # This file is adapted from https://github.com/alinz/ssh-scp-action and https://github.com/AEnterprise/rsync-deploy.
 # All the actual credit goes to the original developers.
 
-FROM debian:9.5-slim
+FROM debian:stable-slim
 
 RUN apt update
 RUN apt -yq install rsync openssh-client openssl ca-certificates
