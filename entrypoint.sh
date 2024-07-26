@@ -22,7 +22,7 @@ setupSSH(){
 
 
 run_rsync(){
-    sh -c "rsync $INPUT_ARGS -a -v --exclude='.git' -e 'ssh -i $SSH_PATH/deploy_key -o VerifyHostKeyDNS=yes -p $INPUT_PORT' $GITHUB_WORKSPACE/ $INPUT_USER@$INPUT_HOST:$INPUT_DESTINATION"
+    sh -c "rsync -v --exclude='.git' -e 'ssh -i $SSH_PATH/deploy_key -o VerifyHostKeyDNS=yes -p $INPUT_PORT' $INPUT_ARGS $GITHUB_WORKSPACE/ $INPUT_USER@$INPUT_HOST:$INPUT_DESTINATION"
 }
 
 executeSSH() {
